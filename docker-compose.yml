@@ -1,9 +1,24 @@
+version: '3.8'
+
 services:
-  python-server:
+  python-app:
     build:
-      context: ./python-server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.python
     ports:
-      - 8000:8000
-    volumes:
-      - ./python-server/src:/app/src
+      - "8000:8000"
+    command: python -m uvicorn main:app --host 0.0.0.0 --port 8000
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "8001:8001"
+    command: npm start
+    environment:
+      - PORT=8001
+    depends_on:
+      - python-app
