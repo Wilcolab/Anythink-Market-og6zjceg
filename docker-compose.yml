@@ -1,24 +1,16 @@
-version: '3.8'
+@Tejasri-T ➜ /workspaces/Anythink-Market-og6zjceg (newbranch) $ git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+@Tejasri-T ➜ /workspaces/Anythink-Market-og6zjceg (newbranch) $ git push -u newbranch
+fatal: 'newbranch' does not appear to be a git repository
+fatal: Could not read from remote repository.
 
-services:
-  python-app:
-    build:
-      context: .
-      dockerfile: Dockerfile.python
-    ports:
-      - "8000:8000"
-    command: python -m uvicorn main:app --host 0.0.0.0 --port 8000
-    environment:
-      - PYTHONUNBUFFERED=1
+Please make sure you have the correct access rights
+and the repository exists.
+@Tejasri-T ➜ /workspaces/Anythink-Market-og6zjceg (newbranch) $ git push newbranch
+fatal: 'newbranch' does not appear to be a git repository
+fatal: Could not read from remote repository.
 
-  node-app:
-    build:
-      context: .
-      dockerfile: Dockerfile.node
-    ports:
-      - "8001:8001"
-    command: npm start
-    environment:
-      - PORT=8001
-    depends_on:
-      - python-app
+Please make sure you have the correct access rights
+and the repository exists.
+@Tejasri-T ➜ /workspaces/Anythink-Market-og6zjceg (newbranch) $ 
