@@ -1,6 +1,8 @@
-const express = require("express");
+const express = require('express');
 
 const app = express();
+const PORT = 8001;
+
 app.use(express.json());
 
 // In-memory tasks list (same as Python)
@@ -34,8 +36,7 @@ app.get("/tasks", (req, res) => {
   res.json({ tasks });
 });
 
-// Start server
-const PORT = process.env.PORT || 8001;
 app.listen(PORT, () => {
-  console.log(`Node server running on port ${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
+
