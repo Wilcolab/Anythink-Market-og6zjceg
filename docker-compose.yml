@@ -11,7 +11,7 @@ services:
 
   node-app:
     build:
-      context: ./node-server/node-server
+      context: ./node-server
       dockerfile: Dockerfile
     ports:
       - "8001:8001"
