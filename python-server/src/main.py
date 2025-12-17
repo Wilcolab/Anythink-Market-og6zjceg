@@ -20,3 +20,7 @@ def add_task(task: Task):
 @app.get("/tasks")
 def get_tasks():
     return {"tasks": tasks}
+
+@app.get("/hello")
+def say_hello():
+    return {"message": "Hello from Python!"}
