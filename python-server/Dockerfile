@@ -7,8 +7,14 @@ WORKDIR /app
 # Copy the dependencies file to the working directory
 COPY requirements.txt /app
 
+
+COPY . .
+
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Debug: list files
+RUN ls -R /app
 
 # Expose the port on which the server will run
 EXPOSE 8000
